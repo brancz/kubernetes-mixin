@@ -1,5 +1,5 @@
 {
-  dashboard(title, uid=''):: {
+  dashboard(title):: {
     // Stuff that isn't materialised.
     _nextPanel:: 0,
     addRow(row):: self {
@@ -71,7 +71,6 @@
     },
 
     // Stuff that is materialised.
-    uid: uid,
     annotations: {
       list: [],
     },

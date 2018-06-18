@@ -7,7 +7,6 @@ local g = import '../lib/grafana.libsonnet';
 
       g.dashboard(
         'K8s / USE Method / Cluster',
-        uid=($._config.grafanaDashboardIDs['k8s-cluster-rsrc-use.json']),
       ).addRow(
         g.row('CPU')
         .addPanel(
@@ -85,7 +84,6 @@ local g = import '../lib/grafana.libsonnet';
     'k8s-node-rsrc-use.json':
       g.dashboard(
         'K8s / USE Method / Node',
-        uid=($._config.grafanaDashboardIDs['k8s-node-rsrc-use.json']),
       ).addTemplate('node', 'kube_node_info', 'node')
       .addRow(
         g.row('CPU')

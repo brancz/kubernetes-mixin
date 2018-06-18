@@ -12,7 +12,6 @@ local g = import '../lib/grafana.libsonnet';
 
       g.dashboard(
         'K8s / Compute Resources / Cluster',
-        uid=($._config.grafanaDashboardIDs['k8s-resources-cluster.json']),
       ).addRow(
         (g.row('Headlines') +
          {
@@ -104,7 +103,6 @@ local g = import '../lib/grafana.libsonnet';
 
       g.dashboard(
         'K8s / Compute Resources / Namespace',
-        uid=($._config.grafanaDashboardIDs['k8s-resources-namespace.json']),
       ).addTemplate('namespace', 'kube_pod_info', 'namespace')
       .addRow(
         g.row('CPU Usage')
@@ -170,7 +168,6 @@ local g = import '../lib/grafana.libsonnet';
 
       g.dashboard(
         'K8s / Compute Resources / Pod',
-        uid=($._config.grafanaDashboardIDs['k8s-resources-pod.json']),
       ).addTemplate('namespace', 'kube_pod_info', 'namespace')
       .addTemplate('pod', 'kube_pod_info{namespace="$namespace"}', 'pod')
       .addRow(
